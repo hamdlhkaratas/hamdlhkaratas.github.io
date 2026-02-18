@@ -1,100 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sculpture Gallery</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f3ef;  /* Hafif krem-bej arka plan */
-      margin: 0;
-      padding: 0;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 28px;
-      color: #333;
-    }
-
-    .gallery img {
-      display: block;              
-      margin: 20px auto;           
-      max-width: 90%;              
-      height: auto;                
-      border-radius: 12px;         
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.04);      
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .gallery {
-      width: 100%;
-      text-align: center;          
-    }
-  </style>
-</head>
-<body>
-<h1>Sculpture Gallery</h1>
-<div class="slider">
-  <div class="slide-track">
-    <img src="sculpture-01.jpg" alt="Sculpture 01">
-      <img src="best2.jpg" alt="Sculpture 01">
-      <img src="best3.jpg" alt="Sculpture 01">
-    <img src="IMG_1235.jpg" alt="Sculpture 02">
-    <img src="IMG_1236.jpg" alt="Sculpture 03">
-    <img src="IMG_1237.jpg" alt="Sculpture 04">
-  </div>
-</div>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sculpture Gallery</title>
 <style>
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f3ef;
+  background-color: #f7f3ef; 
   margin: 0;
   padding: 0;
 }
-
 h1 {
   text-align: center;
-  margin-top: 30px;
+  margin: 30px 0;
   font-size: 28px;
   color: #333;
 }
-
-/* Slider alanı */
-.slider {
-  overflow-x: auto;       /* Yatay kaydırma aktif */
-  white-space: nowrap;    /* Tüm resimleri tek satır yap */
-  padding: 20px 0;
+h2 {
+  margin: 30px 20px 10px;
+  font-size: 22px;
+  color: #333;
 }
-
-/* Resimler slider içinde */
-.slide-track img {
-  display: inline-block;
-  height: 250px;          /* Sabit yükseklik, premium görünüm */
-  margin-right: 20px;
+.mini-slider {
+  display: flex;
+  overflow-x: auto;         
+  padding: 10px 20px;
+  gap: 15px;                
+}
+.mini-slider img {
+  flex: 0 0 auto;           
+  height: 250px;             
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.slide-track img:hover {
-  transform: scale(1.05);
+.mini-slider img:hover {
+  transform: scale(1.04);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-
-/* Mobilde tam ekran için */
 @media (max-width: 600px) {
-  .slide-track img {
-    height: 200px;
-    margin-right: 15px;
-  }
+  .mini-slider img { height: 200px; }
 }
-    </style>
+</style>
+</head>
+<body>
+<h1>Sculpture Gallery</h1>
+
+<h2>Sculpture 01</h2>
+<div class="mini-slider">
+  <img src="sculpture-01.jpg" alt="Sculpture 01 - 1">
+  <img src="best2.jpg" alt="Sculpture 01 - 2">
+  <img src="best3.jpg" alt="Sculpture 01 - 3">
+</div>
+
+<h2>Sculpture 02</h2>
+<div class="mini-slider">
+  <img src="IMG_1235_1.jpg" alt="Sculpture 02 - 1">
+  <img src="IMG_1235_2.jpg" alt="Sculpture 02 - 2">
+</div>
+
+<h2>Sculpture 03</h2>
+<div class="mini-slider">
+  <img src="IMG_1236_1.jpg" alt="Sculpture 03 - 1">
+  <img src="IMG_1236_2.jpg" alt="Sculpture 03 - 2">
+  <img src="IMG_1236_3.jpg" alt="Sculpture 03 - 3">
+</div>
+
+</body>
+</html>
