@@ -8,14 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+/* Genel */
 body{
   margin:0;
-  background:#0f0f0f;
-  color:#eaeaea;
+  background:#f4f4f4; /* hafif gri, premium hissi */
+  color:#1a1a1a;
   font-family:'Inter',sans-serif;
   overflow-x:hidden;
 }
 
+/* Menü */
 nav{
   position:fixed;
   width:100%;
@@ -23,14 +25,16 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(0,0,0,.6);
+  background:rgba(0,0,0,0.6);
   backdrop-filter:blur(8px);
   box-sizing:border-box;
+  z-index: 100;
 }
 
 .logo{
   letter-spacing:2px;
   font-size:14px;
+  color:#eaeaea;
 }
 
 .nav-links{
@@ -48,77 +52,89 @@ nav{
 }
 
 .nav-links a:hover{
-  opacity:.6;
+  color: #d4af37; /* ince altın rengi hover */
 }
 
-header{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:0 20px;
+/* Hero Header */
+.hero-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-h1{
-  font-family:'Playfair Display',serif;
-  font-size:54px;
-  letter-spacing:4px;
-  margin:0;
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* görsel kırpılmadan alanı kaplasın */
+  display: block;
 }
 
-.subtitle{
-  margin-top:15px;
-  font-size:13px;
-  letter-spacing:3px;
-  opacity:.6;
+.hero-text {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #eaeaea;
 }
 
-/* MOBILE FIX */
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 96px;
+  letter-spacing: 6px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hero-text .subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 4px;
+  opacity: 0.6;
+  margin-top: 12px;
+}
+
+/* Mobil uyum */
 @media(max-width:768px){
+  nav{
+    padding:20px 5%;
+  }
 
-nav{
-  padding:20px 5%;
+  .nav-links a{
+    margin-left:15px;
+    font-size:10px;
+    letter-spacing:1px;
+  }
+
+  .hero-text h1{
+    font-size:34px;
+    letter-spacing:2px;
+  }
+  .hero-text .subtitle{
+    font-size:12px;
+    letter-spacing:2px;
+  }
 }
-
-.nav-links a{
-  margin-left:15px;
-  font-size:10px;
-  letter-spacing:1px;
-}
-
-h1{
-  font-size:34px;
-  letter-spacing:2px;
-}
-
-.subtitle{
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <nav>
-<div class="logo">HK</div>
-
-<div class="nav-links">
-  <a href="collection.html">WORK</a>
-  <a href="mailto:hamdullahkaratas406@gmail.com">MAIL</a>
-  <a href="https://instagram.com/hamdlhkaratas" target="_blank">IG</a>
-  <!-- LIMITED SERIES linki TAMAMEN kaldırıldı -->
-</div>
+  <div class="logo">HK</div>
+  <div class="nav-links">
+    <a href="collection.html">WORK</a>
+    <a href="mailto:hamdullahkaratas406@gmail.com">MAIL</a>
+    <a href="https://instagram.com/hamdlhkaratas" target="_blank">IG</a>
+  </div>
 </nav>
 
-<header>
-<h1>HAMDULLAH KARATAŞ</h1>
-<div class="subtitle">CERAMIC SCULPTURE • PORCELAIN • STONEWARE</div>
+<header class="hero-header">
+  <img src="images/hero-banner.jpg" alt="Hero Banner" class="hero-img">
+  <div class="hero-text">
+    <h1>HAMDULLAH KARATAŞ</h1>
+    <div class="subtitle">CERAMIC SCULPTURE • PORCELAIN • STONEWARE</div>
+  </div>
 </header>
 
 </body>
