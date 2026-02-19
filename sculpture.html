@@ -15,7 +15,9 @@ body {
   font-family:'Inter',sans-serif;
   overflow-x:hidden;
 }
+
 a { text-decoration:none; color:inherit; }
+
 .back-btn {
   position:fixed;
   top:30px;
@@ -33,6 +35,7 @@ a { text-decoration:none; color:inherit; }
   background:#fff;
   color:#111;
 }
+
 h1 {
   font-family:'Playfair Display', serif;
   font-size:64px;
@@ -48,36 +51,51 @@ h1 {
   opacity:.7;
   margin-bottom:60px;
 }
+
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:50px;
-  padding:0 60px 80px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:40px;
+  padding:0 40px 80px;
+  justify-items:center;
 }
+
 .card {
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
   cursor:pointer;
-}
-.card img {
-  width:100%;
-  display:block;
-  transition:transform .5s ease;
-}
-.card:hover img { transform:scale(1.07); }
-.card .info {
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  padding:18px;
-  background:rgba(0,0,0,0.65);
-  font-family:'Inter',sans-serif;
-  font-size:14px;
-  letter-spacing:1px;
   text-align:center;
 }
+
+.card img {
+  width:auto;
+  height:75px; /* 1/4 küçültülmüş boyut */
+  max-width:100%;
+  display:block;
+  margin:0 auto;
+  transition: transform .5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card .info {
+  padding:8px 0;
+}
+
+.card .info h3 {
+  margin:0;
+  font-family:'Playfair Display', serif;
+  font-size:14px;
+}
+
+.card .info p {
+  margin:4px 0 0;
+  font-size:12px;
+  opacity:0.7;
+  font-family:'Inter', sans-serif;
+}
+
+/* LIGHTBOX */
 .lightbox-bg {
   position:fixed;
   top:0; left:0;
@@ -88,7 +106,10 @@ h1 {
   align-items:center;
   z-index:9999;
 }
-.lightbox-bg img { max-width:90%; max-height:90%; }
+.lightbox-bg img {
+  max-width:90%;
+  max-height:90%;
+}
 .lightbox-bg .close {
   position:absolute;
   top:30px; right:30px;
@@ -96,6 +117,7 @@ h1 {
   cursor:pointer;
   font-family:'Inter',sans-serif;
 }
+
 @media(max-width:768px){
   h1{font-size:48px;}
   .grid{padding:0 20px 60px; gap:30px;}
@@ -112,26 +134,42 @@ h1 {
 <div class="grid">
   <div class="card" onclick="openLightbox('images/sculpture-01.jpg')">
     <img src="images/best2.jpg" alt="Sculpture 01">
-    <div class="info">DEAD<p>2023Handmade ceramic sculpture, 55cm tall</p>
+    <div class="info">
+      <h3>DEAD</h3>
+      <p>Handmade ceramic sculpture,55 cm tall, made in 2023. </p>
     </div>
   </div>
+
   <div class="card" onclick="openLightbox('images/mgf2.jpg')">
     <img src="images/mgf1.jpg" alt="Sculpture 02">
-    <div class="info">CROSSBREED<p>2024Handmade ceramic sculpture, 45cm tall</p>
+    <div class="info">
+      <h3>CROSSBREED</h3>
+      <p>Handmade ceramic sculpture,45 cm tall, made in 2024.</p>
     </div>
   </div>
-  </div>
+
   <div class="card" onclick="openLightbox('images/sculpture-03.jpg')">
     <img src="images/sculpture-03.jpg" alt="Sculpture 03">
-    <div class="info">SCULPTURE 03</div>
+    <div class="info">
+      <h3>SCULPTURE 03</h3>
+      <p>Ceramic art piece, hand-finished</p>
+    </div>
   </div>
+
   <div class="card" onclick="openLightbox('images/sculpture-04.jpg')">
     <img src="images/sculpture-04.jpg" alt="Sculpture 04">
-    <div class="info">SCULPTURE 04</div>
+    <div class="info">
+      <h3>SCULPTURE 04</h3>
+      <p>Unique porcelain figure, 30cm tall</p>
+    </div>
   </div>
+
   <div class="card" onclick="openLightbox('images/sculpture-05.jpg')">
     <img src="images/sculpture-05.jpg" alt="Sculpture 05">
-    <div class="info">SCULPTURE 05</div>
+    <div class="info">
+      <h3>SCULPTURE 05</h3>
+      <p>Handcrafted ceramic art, one of a kind</p>
+    </div>
   </div>
 </div>
 
