@@ -1,58 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hamdullah Karataş Art</title>
+<title>Hamdullah Karataş</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #ede3db; /* Önceki ana sayfa rengi korunuyor */
-  margin:0; padding:0;
-  color:#333;
+
+body{
+margin:0;
+background:#0f0f0f;
+color:#eaeaea;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
 }
-header {
-  text-align:center;
-  padding:40px 20px 20px;
+
+nav{
+position:fixed;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(8px);
+box-sizing:border-box;
 }
-h1 {
-  font-size:36px; 
-  letter-spacing:2px; 
-  font-weight:700;
-  margin:0;
+
+.logo{
+letter-spacing:2px;
+font-size:14px;
 }
-nav {
-  margin-top:25px;
+
+.nav-links{
+display:flex;
+align-items:center;
 }
-nav a {
-  text-decoration:none;
-  color:#333;
-  font-size:20px;
-  margin:0 20px;
-  padding:8px 15px;
-  border-radius:8px;
-  transition: all 0.3s ease;
-  border:2px solid transparent;
+
+.nav-links a{
+color:#eaeaea;
+text-decoration:none;
+margin-left:30px;
+font-size:12px;
+letter-spacing:2px;
+transition:.3s;
 }
-nav a:hover {
-  background-color:#D4AF37; /* Altın hover */
-  color:#fff;
-  border:2px solid #D4AF37;
+
+.nav-links a:hover{
+opacity:.6;
 }
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:54px;
+letter-spacing:4px;
+margin:0;
+}
+
+.subtitle{
+margin-top:15px;
+font-size:13px;
+letter-spacing:3px;
+opacity:.6;
+}
+
+/* MOBILE FIX */
+
+@media(max-width:768px){
+
+nav{
+padding:20px 5%;
+}
+
+.nav-links a{
+margin-left:15px;
+font-size:10px;
+letter-spacing:1px;
+}
+
+h1{
+font-size:34px;
+letter-spacing:2px;
+}
+
+.subtitle{
+font-size:10px;
+letter-spacing:2px;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Hamdullah Karataş Art</h1>
-  <nav>
-    <a href="sculpture.html">Sculpture</a>
-    <a href="cup.html">Cup</a>
-    <!-- Special Collection linki kaldırıldı -->
-  </nav>
-</header>
+<nav>
+<div class="logo">HK</div>
 
-<!-- Ana sayfa içeriği aynen korunuyor -->
+<div class="nav-links">
+<a href="collection.html">WORK</a>
+<a href="mailto:hamdullahkaratas406@gmail.com">MAIL</a>
+<a href="https://instagram.com/hamdlhkaratas" target="_blank">IG</a>
+<!-- Limited Collection linki kaldırıldı -->
+</div>
+</nav>
+
+<header>
+<h1>HAMDULLAH KARATAŞ</h1>
+<div class="subtitle">CERAMIC SCULPTURE • PORCELAIN • STONEWARE</div>
+</header>
 
 </body>
 </html>
