@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-/* Genel */
+/* Genel ayarlar */
 body{
   margin:0;
   background:#f4f4f4;
@@ -52,14 +52,14 @@ nav{
 }
 
 .nav-links a:hover{
-  color: #d4af37;
+  color: #d4af37; /* altın ton hover */
 }
 
-/* Hero Header */
+/* Hero header */
 .hero-header {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh;  /* ekranı tamamen kaplar */
   overflow: hidden;
 }
 
@@ -75,6 +75,7 @@ nav{
   z-index: 5;
 }
 
+/* Görsel */
 .hero-img {
   position: absolute;
   top: 50%;
@@ -86,9 +87,10 @@ nav{
   display: block;
 }
 
+/* Başlık overlay */
 .hero-text {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -100,7 +102,6 @@ nav{
   font-family: 'Playfair Display', serif;
   font-size: 96px;
   letter-spacing: 6px;
-  font-weight: 600;
   margin: 0;
 }
 
@@ -120,8 +121,8 @@ nav{
   transform: translateX(-50%);
   font-size: 24px;
   color: #eaeaea;
-  z-index: 10;
   animation: bounce 2s infinite;
+  z-index: 10;
 }
 
 @keyframes bounce {
@@ -169,7 +170,7 @@ nav{
 </nav>
 
 <header class="hero-header">
-  <img src="images/ana.jpg" alt="Hero Banner" class="hero-img">
+  <img src="images/hero-banner.jpg" alt="Hero Banner" class="hero-img">
   <div class="hero-text">
     <h1>HAMDULLAH KARATAŞ</h1>
     <div class="subtitle">CERAMIC SCULPTURE • PORCELAIN • STONEWARE</div>
