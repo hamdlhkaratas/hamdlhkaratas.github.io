@@ -8,142 +8,130 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  background: #111;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
-
-a { text-decoration: none; color: inherit; }
+body { margin:0; background:#111; color:#fff; font-family:'Inter',sans-serif; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
 
 .back-btn {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  font-family: 'Inter',sans-serif;
-  font-size: 14px;
-  letter-spacing: 2px;
-  border: 1px solid #fff;
-  padding: 8px 16px;
-  opacity: .8;
-  transition: .3s;
+  position:fixed; top:30px; left:30px;
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  letter-spacing:2px;
+  border:1px solid #fff;
+  padding:8px 16px;
+  opacity:.8;
+  transition:.3s;
 }
 .back-btn:hover {
-  opacity: 1;
-  background: #fff;
-  color: #111;
+  opacity:1;
+  background:#fff;
+  color:#111;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  text-align: center;
-  margin-top: 80px;
-  letter-spacing: 3px;
-  font-weight: 700;
+  font-family:'Playfair Display',serif;
+  font-size:64px;
+  text-align:center;
+  margin-top:80px;
+  letter-spacing:3px;
+  font-weight:700;
 }
 
 .subtitle {
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: 2px;
-  opacity: .7;
-  margin-bottom: 60px;
+  text-align:center;
+  font-size:16px;
+  letter-spacing:2px;
+  opacity:.7;
+  margin-bottom:60px;
 }
 
 /* GRID */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 50px;
-  padding: 0 60px 80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:50px;
+  padding:0 60px 80px;
 }
 
 .card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  cursor:pointer;
 }
 
 .card img {
-  width: 100%;
-  display: block;
-  transition: transform .5s ease;
+  width:100%;
+  display:block;
+  transition:transform .5s ease;
 }
 
-.card:hover img {
-  transform: scale(1.07);
-}
+.card:hover img { transform:scale(1.07); }
 
 /* INFO BOX */
 .card .info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 18px;
-  background: rgba(0,0,0,0.65);
-  font-family: 'Inter',sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:18px;
+  background:rgba(0,0,0,0.65);
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  letter-spacing:1px;
+  text-align:center;
 }
 
 /* LIGHTBOX */
 .lightbox-bg {
-  position: fixed;
+  position:fixed;
   top:0; left:0;
   width:100%; height:100%;
   background: rgba(0,0,0,0.95);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
 
 .lightbox-bg img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width:90%; max-height:90%;
 }
 
 .lightbox-bg .close {
   position:absolute;
   top:30px; right:30px;
-  font-size: 22px;
-  cursor: pointer;
+  font-size:22px;
+  cursor:pointer;
   font-family:'Inter',sans-serif;
 }
 
 @media(max-width:768px){
-  h1 { font-size: 48px; }
-  .grid { padding: 0 20px 60px; gap: 30px; }
+  h1 { font-size:48px; }
+  .grid { padding:0 20px 60px; gap:30px; }
 }
 </style>
 </head>
+
 <body>
 
-<a class="back-btn" href="index.html">&larr; HOME</a>
+<a class="back-btn" href="collection.html">&larr; BACK</a>
 
 <h1>SCULPTURES</h1>
-<div class="subtitle">handmade special works </div>
+<div class="subtitle">Handmade Special Works</div>
 
 <div class="grid">
-  <div class="card" onclick="openLightbox('best2.jpg')">
-    <img src="sculpture-01.jpg" alt="Sculpture 01">
-    <div class="info">DEAD </div>
+  <div class="card" onclick="openLightbox('sculpture-01.jpg')">
+    <img src="best.jpg" alt="Sculpture 01">
+    <div class="info">DEAD</div>
   </div>
-  <div class="card" onclick="openLightbox('mgf3.jpg')">
-    <img src="mgf2.jpg" alt="sculpture 02">
-    <div class="info">CROSSBREED  </div>CROSSBREED 
+  <div class="card" onclick="openLightbox('mgf2.jpg')">
+    <img src="mgf1.jpg" alt="Sculpture 02">
+    <div class="info">CROSSBREED</div>
   </div>
-  <div class="card" onclick="openLightbox('sculpture3.jpg')">
-    <img src="belli.jpg" alt="Sculpture 03">
-    <div class="info">Sculpture 03 </div>
+  <div class="card" onclick="openLightbox('sculpture-03.jpg')">
+    <img src="sculpture-03.jpg" alt="Sculpture 03">
+    <div class="info">Sculpture 03</div>
   </div>
-  <!-- Yeni heykeller eklemek istersen buraya card divleri ekleyebilirsin -->
 </div>
 
 <div id="lightbox" class="lightbox-bg" onclick="closeLightbox()">
@@ -154,10 +142,10 @@ h1 {
 <script>
 function openLightbox(src){
   document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox').style.display = 'flex';
+  document.querySelector('.lightbox-bg').style.display='flex';
 }
 function closeLightbox(){
-  document.getElementById('lightbox').style.display = 'none';
+  document.querySelector('.lightbox-bg').style.display='none';
 }
 </script>
 
