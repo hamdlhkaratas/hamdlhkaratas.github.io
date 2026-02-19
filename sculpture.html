@@ -3,166 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sculptures - Hamdullah Karataş</title>
+<title>Sculptures | Hamdullah Karataş</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  background:#0f0f0f;
-  color:#eaeaea;
-  font-family:'Inter',sans-serif;
+body {
+  margin: 0;
+  background: #111;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
-a {
-  text-decoration:none;
-  color:#eaeaea;
+a { text-decoration: none; color: inherit; }
+
+.back-btn {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  font-family: 'Inter',sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  opacity: .8;
+  transition: .3s;
+}
+.back-btn:hover {
+  opacity: 1;
+  background: #fff;
+  color: #111;
 }
 
-/* Geri tuşu */
-.back-btn{
-  margin:20px;
-  display:inline-block;
-  padding:10px 18px;
-  border:2px solid #D4AF37;
-  border-radius:10px;
-  transition: all 0.3s ease;
-  font-family:'Inter',sans-serif;
-}
-.back-btn:hover{
-  background:#D4AF37;
-  color:#0f0f0f;
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  text-align: center;
+  margin-top: 80px;
+  letter-spacing: 3px;
+  font-weight: 700;
 }
 
-/* Başlık */
-h1{
-  font-family:'Playfair Display',serif;
-  font-size:48px;
-  text-align:center;
-  margin-top:40px;
-  letter-spacing:3px;
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: .7;
+  margin-bottom: 60px;
 }
 
-/* Sub başlık */
-.subtitle{
-  text-align:center;
-  margin-bottom:50px;
-  font-size:14px;
-  opacity:0.7;
-  letter-spacing:2px;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  padding: 0 60px 80px;
 }
 
-/* Galeri */
-.gallery{
-  display:flex;
-  flex-direction:column; /* alt alta */
-  align-items:center;
-  gap:40px;
-  padding:0 20px 50px 20px;
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.gallery-item{
-  position:relative;
-  width:300px;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 15px 35px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor:pointer;
-  background:#1a1a1a;
-}
-.gallery-item:hover{
-  transform:scale(1.05);
-  box-shadow:0 20px 50px rgba(212,175,55,0.8);
+.card img {
+  width: 100%;
+  display: block;
+  transition: transform .5s ease;
 }
 
-.gallery-item img{
-  width:100%;
-  display:block;
+.card:hover img {
+  transform: scale(1.07);
 }
 
-.gallery-item .info{
+/* INFO BOX */
+.card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px;
+  background: rgba(0,0,0,0.65);
+  font-family: 'Inter',sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* LIGHTBOX */
+.lightbox-bg {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-bg img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-bg .close {
   position:absolute;
-  bottom:0;
-  width:100%;
-  padding:15px;
-  background:rgba(0,0,0,0.6);
-  text-align:center;
+  top:30px; right:30px;
+  font-size: 22px;
+  cursor: pointer;
   font-family:'Inter',sans-serif;
 }
 
-.gallery-item .info p{
-  margin:0;
-  font-weight:600;
-  font-size:14px;
-  color:#D4AF37; /* Altın yazı, premium */
-}
-
-/* Lightbox */
-.lightbox{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
-}
-.lightbox img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:16px;
-  box-shadow:0 20px 50px rgba(212,175,55,0.8);
-}
-
-/* MOBILE */
 @media(max-width:768px){
-  h1{font-size:36px;}
-  .subtitle{font-size:12px;}
-  .gallery-item{width:90%;}
+  h1 { font-size: 48px; }
+  .grid { padding: 0 20px 60px; gap: 30px; }
 }
+
 </style>
 </head>
 <body>
 
-<!-- Geri tuşu -->
-<a class="back-btn" href="index.html">&larr; Back to Home</a>
+<a class="back-btn" href="index.html">&larr; HOME</a>
 
-<h1>Sculptures</h1>
-<div class="subtitle">Unique & Premium Sculptures • Rare Collectible • Limited Availability</div>
+<h1>SCULPTURES</h1>
+<div class="subtitle">Unique Works • Exclusive Editions • Premium Art</div>
 
-<div class="gallery">
-  <div class="gallery-item" onclick="openLightbox(this)">
-    <img src="sculpture1.jpg" alt="Sculpture 1">
-    <div class="info"><p>Sculpture 01 • ₺25000</p></div>
+<div class="grid">
+  <div class="card" onclick="openLightbox('sculpture1.jpg')">
+    <img src="sculpture1.jpg">
+    <div class="info">Sculpture 01 — Price Upon Request</div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(this)">
-    <img src="sculpture2.jpg" alt="Sculpture 2">
-    <div class="info"><p>Sculpture 02 • ₺28000</p></div>
+  <div class="card" onclick="openLightbox('sculpture2.jpg')">
+    <img src="sculpture2.jpg">
+    <div class="info">Sculpture 02 — Price Upon Request</div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(this)">
-    <img src="sculpture3.jpg" alt="Sculpture 3">
-    <div class="info"><p>Sculpture 03 • ₺30000</p></div>
+  <div class="card" onclick="openLightbox('sculpture3.jpg')">
+    <img src="sculpture3.jpg">
+    <div class="info">Sculpture 03 — Price Upon Request</div>
   </div>
 </div>
 
-<!-- Lightbox -->
-<div class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="">
+<div id="lightbox" class="lightbox-bg" onclick="closeLightbox()">
+  <div class="close">&times;</div>
+  <img id="lightbox-img">
 </div>
 
 <script>
-function openLightbox(item){
-  const img = item.querySelector('img').src;
-  document.getElementById('lightbox-img').src = img;
-  document.querySelector('.lightbox').style.display = 'flex';
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
 }
 function closeLightbox(){
-  document.querySelector('.lightbox').style.display = 'none';
+  document.getElementById('lightbox').style.display = 'none';
 }
 </script>
 
