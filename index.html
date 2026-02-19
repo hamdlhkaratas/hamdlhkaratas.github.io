@@ -11,7 +11,7 @@
 /* Genel */
 body{
   margin:0;
-  background:#f4f4f4; /* hafif gri, premium hissi */
+  background:#f4f4f4;
   color:#1a1a1a;
   font-family:'Inter',sans-serif;
   overflow-x:hidden;
@@ -48,24 +48,41 @@ nav{
   margin-left:30px;
   font-size:12px;
   letter-spacing:2px;
-  transition:.3s;
+  transition:.4s;
 }
 
 .nav-links a:hover{
-  color: #d4af37; /* ince altın rengi hover */
+  color: #d4af37;
 }
 
 /* Hero Header */
 .hero-header {
   position: relative;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
-.hero-img {
+/* Gradient overlay */
+.hero-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  object-fit: cover; /* görsel kırpılmadan alanı kaplasın */
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  z-index: 5;
+}
+
+.hero-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
   display: block;
 }
 
@@ -76,6 +93,7 @@ nav{
   transform: translate(-50%, -50%);
   text-align: center;
   color: #eaeaea;
+  z-index: 10;
 }
 
 .hero-text h1 {
@@ -92,6 +110,23 @@ nav{
   letter-spacing: 4px;
   opacity: 0.6;
   margin-top: 12px;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #eaeaea;
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
 }
 
 /* Mobil uyum */
@@ -114,6 +149,10 @@ nav{
     font-size:12px;
     letter-spacing:2px;
   }
+
+  .scroll-hint {
+    font-size:18px;
+  }
 }
 </style>
 </head>
@@ -135,6 +174,7 @@ nav{
     <h1>HAMDULLAH KARATAŞ</h1>
     <div class="subtitle">CERAMIC SCULPTURE • PORCELAIN • STONEWARE</div>
   </div>
+  <div class="scroll-hint">↓</div>
 </header>
 
 </body>
