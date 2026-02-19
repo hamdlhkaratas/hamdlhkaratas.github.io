@@ -49,14 +49,14 @@ h1 {
   font-size:16px;
   letter-spacing:2px;
   opacity:.7;
-  margin-bottom:60px;
+  margin-bottom:40px; /* Boşluğu biraz azalttık */
 }
 
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:40px;
-  padding:0 40px 80px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  padding:0 40px 60px;
   justify-items:center;
 }
 
@@ -68,7 +68,7 @@ h1 {
 .card img {
   width:auto;
   max-width:100%;
-  transform: scale(0.25); /* Orijinalin 1/4’ü */
+  transform: scale(0.55); /* 1/4 küçültmeden 2.2× büyütüldü */
   transform-origin: top center;
   display:block;
   margin:0 auto;
@@ -76,11 +76,11 @@ h1 {
 }
 
 .card:hover img {
-  transform: scale(0.27); /* Hover hafif büyüme */
+  transform: scale(0.6); /* Hover hafif büyüme */
 }
 
 .card .info {
-  padding:8px 0;
+  padding:6px 0; /* Resim ile yazı arası azaltıldı */
 }
 
 .card .info h3 {
@@ -90,7 +90,7 @@ h1 {
 }
 
 .card .info p {
-  margin:4px 0 0;
+  margin:2px 0 0;
   font-size:12px;
   opacity:0.7;
   font-family:'Inter', sans-serif;
@@ -121,7 +121,7 @@ h1 {
 
 @media(max-width:768px){
   h1{font-size:48px;}
-  .grid{padding:0 20px 60px; gap:30px;}
+  .grid{padding:0 20px 50px; gap:20px;}
 }
 </style>
 </head>
@@ -134,11 +134,10 @@ h1 {
 
 <div class="grid">
   <div class="card" onclick="openLightbox('images/sculpture-01.jpg')">
-    <img src="images/best2.jpg" alt="Sculpture 01">
+    <img src="best2.jpg" alt="Sculpture 01">
     <div class="info">
       <h3>DEAD</h3>
-      <p>Handmade ceramic sculpture, 55 cm tall.
-        made in 2023. </p>
+      <p>Handmade ceramic sculpture, 55cm tall</p>
     </div>
   </div>
 
@@ -146,8 +145,7 @@ h1 {
     <img src="images/mgf1.jpg" alt="Sculpture 02">
     <div class="info">
       <h3>CROSSBREED</h3>
-      <p>Handmade sculpture, 45 cm tall. 
-        made in 2024. </p>
+      <p>Ceramic sculpture, 45cm tall</p>
     </div>
   </div>
 
