@@ -67,15 +67,16 @@ h1 {
 
 .card img {
   width:auto;
-  height:75px; /* 1/4 küçültülmüş boyut */
   max-width:100%;
+  transform: scale(0.25); /* Orijinalin 1/4’ü */
+  transform-origin: top center;
   display:block;
   margin:0 auto;
   transition: transform .5s ease;
 }
 
 .card:hover img {
-  transform: scale(1.05);
+  transform: scale(0.27); /* Hover hafif büyüme */
 }
 
 .card .info {
@@ -136,7 +137,8 @@ h1 {
     <img src="images/best2.jpg" alt="Sculpture 01">
     <div class="info">
       <h3>DEAD</h3>
-      <p>Handmade ceramic sculpture,55 cm tall, made in 2023. </p>
+      <p>Handmade ceramic sculpture, 55 cm tall.
+        made in 2023. </p>
     </div>
   </div>
 
@@ -144,7 +146,8 @@ h1 {
     <img src="images/mgf1.jpg" alt="Sculpture 02">
     <div class="info">
       <h3>CROSSBREED</h3>
-      <p>Handmade ceramic sculpture,45 cm tall, made in 2024.</p>
+      <p>Handmade sculpture, 45 cm tall. 
+        made in 2024. </p>
     </div>
   </div>
 
